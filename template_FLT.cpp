@@ -404,7 +404,8 @@ void TemplateFLT::template_fit(const Eigen::ArrayXi& trace,
     // Size of the segment
     // Correlation window size + number of samples of desampled template
     int size_segment = ( corr_window(1) - corr_window(0) ) + (size_template_desampled);
-    cout<<size_segment<<endl;
+    //cout<<size_segment<<endl;
+    
     // Starting sample of the segment
     // Sample of trace maximum - sample of template maximum
     // This way the peaks of the trace and template "overlap"
