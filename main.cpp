@@ -45,7 +45,10 @@ int main() {
                      t_max);
     chrono::steady_clock::time_point end = chrono::steady_clock::now();      
 
-    cout<<flt.t_peak_best<<" "<<flt.corr_max_best<<" "<<flt.template_id_best<<" "<<flt.idx_template_desampled_best<<endl;
+    cout<<"t_peak_best = "<<flt.t_peak_best<<"\t";
+    cout<<"corr_max_best = "<<flt.corr_max_best<<"\t";
+    cout<<"template_id_best = "<<flt.template_id_best<<"\t";
+    cout<<"idx_template_desampled_best = "<<flt.idx_template_desampled_best<<endl;
     cout << "Computation time = " << chrono::duration_cast<chrono::microseconds>(end - begin).count() << " µs" << endl;
 
     return 0;
