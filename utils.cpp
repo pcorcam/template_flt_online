@@ -102,3 +102,30 @@ Eigen::ArrayXf normalize(const Eigen::ArrayXf& arr){
 
     return arr_norm;
 }
+
+
+vector<Eigen::ArrayXi> load_test_trace(string test_trace_file_name){
+
+    vector<Eigen::ArrayXi> trace_3D;
+
+    ifstream test_trace_file(test_trace_file_name);
+    string line;
+
+    for (int k = 0; k < 3 && getline(test_trace_file,line); k++){
+        
+        Eigen::ArrayXi trace(1024);
+        
+        istringstream iss(line);
+        int value;
+
+        int i = 0;
+        while(iss>>value){
+            trace[i] = value;
+            i += 1;
+        }
+
+        trace_3D.push_back(trace);
+    }
+    
+    return trace_3D;
+}
